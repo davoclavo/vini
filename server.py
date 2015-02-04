@@ -13,7 +13,6 @@ def root():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-  print os.getcwd()
   if request.method == 'POST':
     video_data = request.form.get('base64webm')
     audio_data = request.form.get('base64wav')
