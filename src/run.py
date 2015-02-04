@@ -3,7 +3,8 @@ from subprocess import call
 import base64
 import vinepy, time
 app = Flask(__name__, static_url_path='', static_folder='')
-api = vinepy.API(username="wineclient@suremail.info", password="password", DEBUG=True)
+# api = vinepy.API(username="wineclient@suremail.info", password="password", DEBUG=True)
+api = vinepy.API(username="wineclient@suremail.info", password="password")
 
 @app.route('/')
 def root():
