@@ -4,6 +4,7 @@ MAINTAINER Davo d@davo.io
 
 ENV TERM dumb
 
+RUN apt-get update -q
 RUN apt-get install -qy ffmpeg
 
 ## add launcher and set execute property
