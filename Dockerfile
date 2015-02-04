@@ -19,7 +19,7 @@ RUN pip install -r /scripts/requirements.txt
 
 EXPOSE 5000
 
-VOLUME ["/src"]
+ADD src /src
 WORKDIR /src
 
 # Use baseimage-docker's init system.
