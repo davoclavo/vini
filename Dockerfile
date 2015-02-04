@@ -4,6 +4,7 @@ MAINTAINER Davo d@davo.io
 
 ENV TERM dumb
 
+RUN add-apt-repository ppa:jon-severinsson/ffmpeg
 RUN apt-get update -q
 RUN apt-get install -qy ffmpeg
 
