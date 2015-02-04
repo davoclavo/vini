@@ -22,9 +22,6 @@ EXPOSE 5000
 ADD src /src
 WORKDIR /src
 
-RUN \
-    chmod 777 /src/process
-
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
