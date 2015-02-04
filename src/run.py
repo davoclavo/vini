@@ -2,6 +2,8 @@ from flask import Flask, request
 from subprocess import call
 import base64
 import vinepy, time
+import os
+
 app = Flask(__name__, static_url_path='', static_folder='')
 # api = vinepy.API(username="wineclient@suremail.info", password="password", DEBUG=True)
 api = vinepy.API(username="wineclient@suremail.info", password="password")
@@ -31,7 +33,7 @@ def upload():
 def save_base64(filename, base64_data):
   base64_string = base64_data.split(',')[1]
   base64_body = base64.urlsafe_b64decode(str(base64_string))
-  with open(filename, 'wb') as f:
+  with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), filename), 'wb') as f:
     f.write(base64_body)
   f.close()
 
