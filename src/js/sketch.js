@@ -13,9 +13,7 @@ var loop_starting_time;
 
 
 function preload() {
-  // load the kick
   drum = loadSound('../_files/drum.mp3');
-  // kick = loadSound('../_files/lucky_dragons_-_power_melody.mp3');
 }
 
 function setup() {
@@ -113,7 +111,7 @@ function uploadReady(){
 }
 
 function upload(){
-    uploadButton.elt.innerText = 'Uploading, encoding and stuff...'
+    uploadButton.elt.innerText = 'Uploading. Please wait...'
     dataView = audioLoop.toDataView();
 
     var blob = new Blob(dataView, { 'type': 'application/octet-stream' });
