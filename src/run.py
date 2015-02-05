@@ -27,7 +27,7 @@ def upload():
     if audio_data:
       save_base64(audio_filename, audio_data)
 
-    call(['ffmpeg', '-i', audio_filename, '-i', video_filename, '-c:v', 'libx264', '-r', '30', '-pix_fmt',  'yuv420p', '-y', 'process/output.mp4'])
+    call(['ffmpeg', '-i', audio_filename, '-i', video_filename, '-c:v', 'libx264', '-strict', '-2', '-r', '30', '-pix_fmt', 'yuv420p', '-y', 'process/output.mp4'])
     shareUrl = vine_upload(request.form.get('title'))
     return shareUrl
 
